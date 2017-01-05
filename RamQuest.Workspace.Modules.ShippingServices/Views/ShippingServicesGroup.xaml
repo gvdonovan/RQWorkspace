@@ -1,0 +1,18 @@
+﻿<igOutlookBar:OutlookBarGroup
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ig="http://schemas.infragistics.com/xaml" 
+    xmlns:igOutlookBar="http://infragistics.com/OutlookBar"    
+    xmlns:inf="clr-namespace:RamQuest.Workspace.Infrastructure;assembly=RamQuest.Workspace.Infrastructure"
+    xmlns:infPrism="clr-namespace:RamQuest.Workspace.Infrastructure.Prism;assembly=RamQuest.Workspace.Infrastructure"    
+    x:Class="RamQuest.Workspace.Modules.ShippingServices.Views.ShippingServicesGroup"
+    Header="Shipping Services">
+
+    <ig:XamDataTree x:Name="treeView" Background="Transparent" ItemsSource="{Binding Items}" infPrism:XamDataTreeItemSelected.Command="{x:Static Member=inf:Commands.NavigateCommand}">
+        <ig:XamDataTree.GlobalNodeLayouts>
+            <ig:NodeLayout Key="ItemsLayout" TargetTypeName="NavigationItem" DisplayMemberPath="Caption" IsExpandedMemberPath="IsExpanded" />
+        </ig:XamDataTree.GlobalNodeLayouts>
+    </ig:XamDataTree>
+
+</igOutlookBar:OutlookBarGroup>
+
