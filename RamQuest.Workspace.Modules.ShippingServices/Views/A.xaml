@@ -4,12 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:inf="clr-namespace:RamQuest.Workspace.Infrastructure;assembly=RamQuest.Workspace.Infrastructure"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactionRequest="http://prismlibrary.com/"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
     <Grid x:Name="LayoutRoot" Background="White">
+        <i:Interaction.Triggers>
+            <interactionRequest:InteractionRequestTrigger SourceObject="{Binding ConfirmExitInteractionRequest}">
+                <interactionRequest:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True"/>
+            </interactionRequest:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
         <TextBlock Text="{Binding Title}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
         
     </Grid>
 
 </inf:ViewBase>
+
